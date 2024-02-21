@@ -31,7 +31,7 @@
 # SW Team
 <img width="1406" alt="image" src="https://github.com/alrbs10/ai-speaker/assets/102707496/0e54e9e0-aa17-41a6-a491-312e1418675b">
 <br/>
-- 초기 계획 : HW 팀으로 부터 받은 음성파일을 형태소 분석 , 구문 분석 , 의미 분석 , 담화 분석을 통해 그에 알맞는 언어를 생성한 후 다시 음성파일로 변환 후에 HW 팀으로 다시 넘긴다.
+The initial plan is to receive audio files from the HW team, conduct morphological analysis, syntactic analysis, semantic analysis, and discourse analysis, generate appropriate language based on the analysis, convert it back into audio files, and then return them to the HW team.
 <br/>
 
 ## STT , TTS 에 사용한 OpenAI Whisper model
@@ -43,11 +43,12 @@ Whisper is an automatic speech recognition (ASR) system trained on 680,000 hours
 
 <img width="590" alt="image" src="https://github.com/alrbs10/ai-speaker/assets/102707496/61a6bffe-91ee-4aa0-9be1-ed836e7c9585">
 
-- whisper STT 를 사용하여 음성을 텍스트로 변환한다음 모델을 통하여 화자정보를 추출
-- 이에 화자정보에 따른 rule-based의 프롬프트 튜닝을 거쳐 gpt api를 사용, input text에 맞는 텍스트를 생성
-- 생성된 텍스트를 whisper TTS 를 사용하여 음성파일의 형태로 변환하는 작업을 거침
+- Utilizing whisper STT, the speech is converted into text, following which the model extracts speaker information.
+- Based on this speaker information, rule-based prompt tuning is conducted, and the GPT API is utilized to generate text corresponding to the input text.
+- The generated text is then transformed into the form of an audio file using whisper TTS.
 
 ## 화자 분류에 사용된 데이터셋
+
 - 화자를 분류할 때 있어서 데이터셋이 중요했습니다.<br/>
 - 먼저 어린아이와 성인의 화자 정보를 구분하기 위해 AI 허브의 어린이 음성 데이터셋을 사용하였습니다. 어린아이를 0 , 성인을 1로 라벨링 하였습니다.<br/>
 
